@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
 
     <application
         android:allowBackup="true"
@@ -13,11 +15,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WasteToWealth">
         <activity
+            android:name=".screens.UserProfileEditActivity"
+            android:exported="false" />
+        <activity
             android:name=".screens.ForgetPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".screens.AboutUsActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".screens.MainActivity"
             android:exported="false" />

@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
+    Button menu_edit_profile;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
     SharedPreferences sharedPref;
@@ -61,16 +63,20 @@ public class MainActivity extends AppCompatActivity {
         menu = navigationView.getMenu();
 
         MenuItem  menuItem_loginbtn = menu.findItem(R.id.nav_login);
+
         View headerView = navigationView.getHeaderView(0);
         header_uname = headerView.findViewById(R.id.tv_username);
+        menu_edit_profile = headerView.findViewById(R.id.btn_editprofile);
 
         if (isLoggedIn){
             menuItem_loginbtn.setTitle("LogOut");
+            menu_edit_profile.setVisibility(View.VISIBLE);
             menuItem_loginbtn.setIcon(R.drawable.logout_icon);
             uname.setText(sharedPref.getString("name","User Name"));
             header_uname.setText(sharedPref.getString("name","User Name"));
 
         }
+
 
 
 
@@ -94,6 +100,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (menuItem.getItemId() == R.id.profile) {
                     drawerLayout.openDrawer(GravityCompat.END);
+
+
                     Toast.makeText(getApplicationContext(), "Profile", LENGTH_SHORT).show();
                     return true;
                 }
@@ -123,6 +131,13 @@ public class MainActivity extends AppCompatActivity {
 
 
                 return false;
+            }
+        });
+        menu_edit_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),UserProfileEditActivity.class);
+                startActivity(i);
             }
         });
 

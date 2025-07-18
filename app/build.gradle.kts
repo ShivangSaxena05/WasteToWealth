@@ -71,6 +71,7 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.16.0"))
     implementation(platform("com.google.firebase:firebase-core:21.1.1"))
     implementation("com.google.firebase:firebase-auth:23.2.1")
+    implementation("com.google.firebase:firebase-storage:20.3.0")
     implementation("com.sun.mail:android-mail:1.6.7")
     implementation("com.sun.mail:android-activation:1.6.7")
 
@@ -78,6 +79,7 @@ dependencies {
 
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.database)
+    implementation(libs.cardview)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

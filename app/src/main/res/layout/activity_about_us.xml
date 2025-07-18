@@ -446,13 +446,13 @@
             android:id="@+id/aboutUsBack"
             android:layout_width="30dp"
             android:layout_height="46dp"
-            android:drawableTint="@color/primary_color"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="160dp"
             android:background="@android:color/transparent"
             android:drawableStart="@drawable/arrow_left"
+            android:drawableTint="@color/primary_color"
             android:text=""
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.012"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
